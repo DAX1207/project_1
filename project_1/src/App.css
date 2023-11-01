@@ -39,7 +39,8 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  /* border: 1px solid white; */
+  border: 2px solid wheat;
+  border-radius: 10px;
 }
 
 .Inventory-Card {
@@ -85,3 +86,4 @@ img {
 #Buy-Button {
   background-color: green;
 }
+
