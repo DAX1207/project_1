@@ -6,7 +6,7 @@ export default function InventoryCard({productName,brand,quantity,image,price})
             <h3>{productName}</h3>
             <h5>{brand}</h5>
             <p>{quantity}</p>
-            <p>${price}</p>
+            <p>{price}</p>
         </div>
     );
 }

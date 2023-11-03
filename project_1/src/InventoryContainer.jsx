@@ -1,9 +1,12 @@
-import { products } from "./data/products";
+
 import InventoryCard from "./InverntoryCard";
 import "./App.css";
+import { products } from "./data/products";
 
-export default function InventoryContainer()
+export default function InventoryContainer({addToList})
 {
+
+    
     return(
        <div className="Inventory-Container">
        {products.map((product) => ( 
@@ -15,10 +18,9 @@ export default function InventoryContainer()
         image = {product.image}
         price = {product.price}
         />
+        <button onClick={() => addToList(product)}>Add to Cart</button>
         </div>
        )) }
-        
        </div>
-
     );
 }
