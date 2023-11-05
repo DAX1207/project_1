@@ -1,17 +1,22 @@
 import "./App.css";
 
 
-export default function CartList ({ todoList, DeleteItem, DeleteItems, test, total }) {
+export default function CartList ({ cartList, DeleteItem, DeleteItems, test, total }) {
 
+    //Used to calculate the total price of all Items
     function calc(temp){
         total += parseFloat((temp).slice(1))
     }
 
+
   return (
     <>
-    <h2>Your Cart</h2>
-    {(test) ? (<p>No. of Items : {todoList.length}</p>): (<p> </p>)}
-    {todoList.map((i) =>
+    {
+        //Displaying whole Your Cart with Delete and buy buttons
+    }
+    {(test) ? (<h2>Your Cart</h2>): (<p> </p>)}
+    {(test) ? (<p>No. of Items : {cartList.length}</p>): (<p> </p>)}
+    {cartList.map((i) =>
     <div key={i.id} className="CartList-Card">
         <div className="CartList-Card-Info">
         
@@ -22,8 +27,8 @@ export default function CartList ({ todoList, DeleteItem, DeleteItems, test, tot
         <button className="Remove-Button" onClick={() => DeleteItem(i.id)}>Remove</button>
     </div>
     )}
-    {(test) ? (<div className="CartList-Buttons" ><button className="Remove-Button" onClick={() => DeleteItems(todoList)}>Remove All</button> 
-    <button className="Buy-Button">Buy - Total $ {total}</button></div> ) : <h3>Your Cart is empty</h3>}
+    {(test) ? (<div className="CartList-Buttons" ><button className="Remove-Button" onClick={() => DeleteItems(cartList)}>Remove All</button> 
+    <button className="Buy-Button" >Buy - Total $ {total}</button></div> ) : <h>Your Cart is empty</h>}
     </>
   
   )

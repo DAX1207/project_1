@@ -4,40 +4,43 @@ import { products } from "./data/products";
 import CartList from "./CartList";
 
 export default function Grocery(){
-    const [todoList, setTodoList] = useState([]);
-    // const [addToCart, setAddToCart] = useState({})
-    const test = (todoList.length != 0) ? true : false
-    let total = 0.0;
+    const [cartList, setcartList] = useState([]);
+    const test = (cartList.length != 0) ? true : false //Condition to see if list is empty
+    let total = 0.0; //To calculate the Total
 
-    const addToList = (item) => {
-        setTodoList((prevList) => {
+    //Used to enter a data to cart
+    const addToCart = (item) => {
+        setcartList((prevList) => {
             return [...prevList, { ...item, id: crypto.randomUUID() }];
         });
       };
 
+      //Delete Particular Item
       const DeleteItem = (id) => {
-        setTodoList((prevList) => {
+        setcartList((prevList) => {
           return prevList.filter((i) => i.id !== id);
         });
       };
 
+      //Delete whole List
       const DeleteItems = (id) => {
-        setTodoList((prevList) => {
+        setcartList((prevList) => {
           return prevList.filter((i) => i.id == id);
         });
       };
 
     
       return (
+        //To Display whole container including Inventory and Cart
         <div className="GroceriesApp-Container">
           <InventoryContainer
-            addToList={addToList}
+            addToCart={addToCart}
             products={products}
           />
           
           <div className="CartList-Container">
             <CartList 
-             todoList ={todoList}
+             cartList ={cartList}
              DeleteItem ={DeleteItem}
              DeleteItems = {DeleteItems}
              test = {test}

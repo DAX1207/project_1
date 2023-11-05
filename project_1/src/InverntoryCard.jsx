@@ -1,6 +1,7 @@
 export default function InventoryCard({productName,brand,quantity,image,price})
 {
     return(
+        //Displaying one element from Inventory
         <div className="InCard">
             <img src={image} alt="productName" />
             <h3>{productName}</h3>
