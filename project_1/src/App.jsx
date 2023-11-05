@@ -6,7 +6,6 @@ import Grocery from "./Grocerry";
 function App() {
   return <>
   <h1>Grocerries App</h1>
-  {/* <InventoryCard /> */}
   <Grocery />
 
   </>;
