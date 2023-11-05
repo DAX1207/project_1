@@ -11,7 +11,7 @@ export default function Grocery(){
 
     const addToList = (item) => {
         setTodoList((prevList) => {
-          return [...prevList, { id: crypto.randomUUID(),id:crypto}];
+            return [...prevList, { ...item, id: crypto.randomUUID() }];
         });
       };
 
